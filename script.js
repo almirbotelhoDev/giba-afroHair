@@ -6,11 +6,20 @@ const fechar = document.querySelector('.fechar');
 const inputData = document.querySelector('#data');
 const selectHora = document.querySelector('#hora');
 const agendar = document.querySelector('#form-agendar');
+const btn = document.getElementById("menu-btn");
+const menu = document.querySelector("nav ul");
+
+if (btn) {
+    btn.addEventListener("click", () => {
+        menu.classList.toggle("ativo");
+  });
+}
 
 botoesAgendar.forEach(botao => {
     botao.addEventListener('click', e => {
         e.preventDefault();
         modal.classList.add('show');
+        atualizarHorarios();
     });
 });
 
@@ -25,6 +34,15 @@ if (fechar) {
 inputData.addEventListener('change', function () {
     const data = this.value;
     const dataObj = new Date(data + 'T00:00');
+
+    const hoje = new Date();
+    hoje.setHours(0, 0, 0, 0,);
+
+    if (dataObj < hoje) {
+        alert('Não é possível agendar datas passadas.');
+        this.value = '';
+        return;
+    }
 
     if (dataObj.getDay() === 0) {
         alert('Não atendemos aos domingos.');
