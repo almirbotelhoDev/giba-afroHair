@@ -1,75 +1,337 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+} 
 
-html {
-  scroll-behavior: smooth;
-}
+html { 
+    scroll-behavior: smooth; 
+} 
+body { 
+    font-family: Arial, sans-serif; 
+    background-color: #111; 
+    color: #fff; 
+} 
 
-body {
-  font-family: Arial, sans-serif;
-  background-color: #111;
-  color: #fff;
-}
+header { 
+    background-color: #000; 
+    padding: 20px; 
+} 
 
-header {
-  background-color: #000;
-  padding: 20px;
-}
+nav { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+} 
 
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
+nav h1 { 
+    color: #d91c19; 
+} 
 
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
+nav ul { 
+    list-style: none; 
+    display: flex; 
+    gap: 20px; 
+} 
 
-.menu-btn {
-  display: none;
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 2rem;
-  cursor: pointer;
-}
+nav a { 
+    color: #fff; 
+    text-decoration: none; 
+} 
 
-@media (max-width: 768px) {
+nav a:hover { 
+    color: #d91c19; 
+} 
 
-  nav {
-    flex-wrap: wrap;
-  }
+.menu-btn { 
+    display: none; 
+    background: none; 
+    border: none; 
+    color: #fff; 
+    font-size: 2rem; 
+    cursor: pointer; 
+} 
 
-  nav ul {
-    display: none;
-    width: 100%;
-    flex-direction: column;
-    margin-top: 20px;
-    gap: 15px;
-    align-items: center;
-  }
+.btn-agendar { 
+    background-color: #d91c19; 
+    color: #000; 
+    padding: 10px 20px; 
+    border-radius: 5px; 
+    font-weight: bold; 
+    border: none; 
+    cursor: pointer; 
+} 
 
-  nav ul.ativo {
-    display: flex;
-  }
+#hero { 
+    min-height: 100vh; 
+    padding: 100px 20px; 
+    background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)); 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+} 
 
-  .menu-btn {
-    display: block;
-    margin-left: auto;
-  }
+#hero h2 { 
+    font-size: 48px; 
+    margin-bottom: 15px; 
+} 
 
-  nav .btn-agendar {
-    display: none;
-  }
+#hero p { 
+    font-size: 20px; 
+    color: #ccc; 
+    margin-bottom: 30px; 
+} 
 
-  nav h1 {
-    font-size: 1.2rem;
-  }
+#sobre { 
+    padding: 80px 20px; 
+    text-align: center; 
+} 
+
+#sobre h2 { 
+    margin-bottom: 20px; 
+} 
+
+#sobre p { 
+    max-width: 800px; 
+    margin: 0 auto; 
+    line-height: 1.6; 
+    color: #ccc; 
+} 
+
+#servicos { 
+    padding: 80px 20px; 
+    text-align: center; 
+} 
+
+#servicos h2 { 
+    margin-bottom: 30px; 
+} 
+
+#servicos .cards-servicos { 
+    display: flex; 
+    gap: 20px; 
+    justify-content: center; 
+    flex-wrap: wrap; 
+} 
+
+#servicos article { 
+    background: #1a1a1a; 
+    padding: 30px; 
+    width: 250px; 
+    border-radius: 10px; 
+    transition: .3s; 
+} 
+
+#servicos article:hover { 
+    transform: translateY(-10px); 
+} 
+
+#servicos h3 { 
+    color: #d91c19; 
+    margin-bottom: 10px; 
+} 
+
+#galeria { 
+    padding: 80px 20px; 
+    text-align: center; 
+} 
+
+#galeria h2 { 
+    margin-bottom: 30px; 
+} 
+
+#galeria div { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 15px; 
+} 
+
+#galeria img { 
+    width: 100%; 
+    height: 250px; 
+    object-fit: cover; 
+    border-radius: 10px; 
+    transition: .3s; 
+} 
+
+#galeria img:hover { 
+    transform: scale(1.05); 
+} 
+
+#contato { 
+    background: #000; 
+    padding: 80px 20px; 
+    text-align: center; 
+} 
+
+#contato ul { 
+    list-style: none; 
+    display: flex; 
+    justify-content: center; 
+    gap: 30px; 
+    flex-wrap: wrap; 
+} 
+
+#contato a { 
+    color: #d91c19; 
+    font-weight: bold; 
+} 
+
+footer { 
+    background: #111; 
+    text-align: center; 
+    padding: 20px; 
+    font-size: 14px; 
+    color: #777; 
+} 
+
+.modal { 
+    display: none; 
+    position: fixed; 
+    inset: 0; background: rgba(0,0,0,.8); 
+    justify-content: center; 
+    align-items: center; 
+    z-index: 1000; 
+} 
+
+.modal.show { 
+    display: flex; 
+} 
+
+.modal-conteudo { 
+    background: #111; 
+    padding: 2rem; 
+    border-radius: 10px; 
+    max-width: 400px; 
+    width: 90%; 
+    position: relative; 
+} 
+
+.modal-conteudo input, 
+.modal-conteudo select, 
+.modal-conteudo button { 
+    width: 100%; 
+    margin-top: 10px; 
+    padding: .7rem; 
+} 
+
+.modal-conteudo button { 
+    background: #d91c19; 
+    border: none; 
+    font-weight: bold; 
+    cursor: pointer; 
+} 
+
+.fechar { 
+    position: absolute; 
+    top: 10px; 
+    right: 15px; 
+    font-size: 24px; 
+    cursor: pointer; 
+} 
+
+@media (max-width: 768px) { 
+    
+    nav ul { 
+        display: none; 
+    } 
+    nav ul.ativo { 
+        display: flex; 
+        flex-direction: column; 
+        gap: 15px; 
+        margin-top: 15px; 
+    } 
+    
+    .menu-btn { 
+        display: block; 
+    } 
+    
+    #hero { 
+        min-height: auto; 
+        padding: 100px 24px; 
+    } 
+    
+    #hero h2 { 
+        font-size: 32px; 
+    } 
+    
+    #sobre, 
+    #servicos, 
+    #galeria, 
+    #contato { 
+        padding: 50px 24px; 
+    } 
+    
+    #galeria div { 
+        grid-template-columns: 
+        repeat(2, 1fr); 
+    } 
+    
+    #servicos .cards-servicos { 
+        flex-direction: column; 
+        align-items: center; 
+    } 
+} 
+
+section { 
+    padding-left: 24px; 
+    padding-right: 24px; 
+} 
+
+section p, 
+section h2, 
+section h3 { 
+    max-width: 900px; 
+    margin-left: auto; 
+    margin-right: auto; 
+} 
+
+#hero { 
+    padding-left: 24px; 
+    padding-right: 24px; 
+} 
+
+#hero p { 
+    max-width: 600px; 
+} 
+
+#servicos div { 
+    display: flex; 
+    justify-content: center; 
+    gap: 20px; 
+} 
+
+#servicos article { 
+    margin-left: auto; 
+    margin-right: auto; 
+} 
+
+@media (max-width: 768px) { 
+    #servicos article { 
+        width: 100%; 
+        max-width: 320px; 
+    } 
+} 
+
+#sobre p { 
+    max-width: 700px; 
+    margin-left: auto; 
+    margin-right: auto; 
+} 
+
+@media (max-width: 768px) { 
+    nav { 
+        gap: 12px; 
+    } 
+    nav .btn-agendar { 
+        display: none; 
+    } 
+    nav h1 { 
+        font-size: 1.2rem; 
+    } 
+    .menu-btn { 
+        margin-left: auto; 
+    } 
 }
