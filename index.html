@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Giba Hair-Afro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+<div id="modal-agendar" class="modal">
+    <div class="modal-conteudo">
+        <span class="fechar">&times;</span>
+
+        <h2>Agendar Horário</h2>
+        <p> Entre em contato pelo WhatsApp para agendar seu horário.</p>
+        <form id="form-agendar">
+            <label for="servico">Serviço</label>
+                <select name="" id="servico" required>
+                    <option value="">Selecione</option>
+                    <option value="corte">Corte</option>
+                    <option value="barba">Barba</option>
+                    <option value="sobrancelha">Sobrancelha</option>
+                </select>
+
+                <label for="data">Data</label>
+                <input type="date" id="data" required>
+
+                <label for="hora">Horário</label>
+                <select id="hora" required>
+                    <option value="">Selecione</option>
+                    <option value="08:00">08:00</option>
+                    <option value="09:00">09:00</option>
+                    <option value="10:00">10:00</option>
+                    <option value="11:00">11:00</option>
+                    <option value="12:00">12:00</option>
+                    <option value="13:00">13:00</option>
+                    <option value="14:00">14:00</option>
+                    <option value="15:00">15:00</option>
+                    <option value="16:00">16:00</option>
+                    <option value="17:00">17:00</option>
+                    <option value="18:00">18:00</option>
+                    <option value="19:00">19:00</option>
+                    <option value="20:00">20:00</option>
+                </select>
+
+                <button type="submit">Agendar</button>
+        </form>     
+    </div>
+</div>
+
+    <header>
+        <nav>
+            <h1>Giba Hair-Afro</h1>
+
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+
+            <button type="button" class="btn-agendar">Agendar Horário</button>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="hero">
+            <h2>Cortes modernos e tradicionais</h2>
+            <p>Estilo, identidade e cuidado com seu visual</p>
+            <button class="btn-agendar">Agendar Horário</button>
+        </section>
+
+        <section id="sobre">
+            <h2>Sobre</h2>
+            <p>
+                Somos uma barbearia focada em cortes modernos e tradicionais,
+                oferecendo atendimento de qualidade e um ambiente pensado
+                para o seu conforto.
+            </p>
+        </section>
+
+        <section id="servicos">
+            <h2>Serviços</h2>
+
+            <div>
+                <article>
+                    <h3>Corte</h3>
+                    <p>1 hora</p>
+                    <span>R$ 20,00</span>
+                </article>
+
+                <article>
+                    <h3>Barba</h3>
+                    <p>30 minutos</p>
+                    <span>R$ 15,00</span>
+                </article>
+
+                <article>
+                    <h3>Sobrancelha</h3>
+                    <p>20 minutos</p>
+                    <span>R$ 10,00</span>
+                </article>
+            </div>
+        </section>
+
+        <section id="galeria">
+            <h2>Galeria</h2>
+
+            <div>
+                <img class="galeria-img" src="imagens/corte.png" alt="Corte">
+                <img class="galeria-img" src="imagens/barba.png" alt="Barba">
+                <img class="galeria-img" src="imagens/sobrancelha.png" alt="Sobrancelha">
+            </div>
+        </section>
+
+        <section id="contato">
+            <h2>Contato</h2>
+            <p>Entre em contato</p>
+
+            <ul>
+                <li>
+                    <a href=https://wa.me/5511911864401 target="_blank">WhatsApp</a>
+                </li>
+                
+                <li>
+                    <a href=https://www.instagram.com/gl_afrohairr/ target="_blank">Instagram</a>
+                </li>
+                
+                <li>
+                    <a href=https://www.google.com/maps/place/R.+Magalh%C3%A3es+Lemos,+213+-+Vila+Caiuba,+S%C3%A3o+Paulo+-+SP,+05207-130/@-23.397828,-46.7504853,17z/data=!3m1!4b1!4m6!3m5!1s0x94cefcab2900d70f:0x6cad3a827f173b66!8m2!3d-23.397828!4d-46.7504853!16s%2Fg%2F11dz57xl7s?entry=ttu&g_ep=EgoyMDI2MDEyOC4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D target="_blank">Endereço (Google Maps)</a>
+                </li>
+            </ul>
+        </section>
+
+        <section id="agendar-horario">
+            <h2>Agende seu horário</h2>
+            <p>Entre em contato pelo WhatsApp para marcar seu atendimento.</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p> © 2026 - Giba Hair-Afro</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

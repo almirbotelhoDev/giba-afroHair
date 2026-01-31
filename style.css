@@ -1,0 +1,399 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: #fff;
+}
+header {
+    background-color: #000;
+    padding: 20px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav h1 {
+    color: #d91c19;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul a {
+    text-decoration: none;
+    color: white;
+}
+
+nav ul a:hover {
+    color: #d91c19;
+}
+.btn-agendar {
+    background-color: #d91c19;
+    color: #000;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-agendar:hover {
+    background-color: #d91c19;
+}
+#hero {
+    height: 80vh;
+    background: linear-gradient(
+        rgba(0,0,0,0.7),
+        rgba(0,0,0,0.7)
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+}
+
+#hero h2 {
+    font-size: 48px;
+}
+
+#hero p {
+    font-size: 20px;
+    color: #ccc;
+}
+#servicos {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+#servicos h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+#servicos div {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+#servicos article {
+    background-color: #1a1a1a;
+    padding: 30px;
+    width: 250px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+#servicos article:hover {
+    transform: translateY(-10px);
+}
+
+#servicos h3 {
+    color: #d91c19;
+    margin-bottom: 10px;
+}
+
+#servicos span {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#galeria {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+#galeria h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+#galeria div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+#galeria img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+#galeria img:hover {
+    transform: scale(1.05);
+}
+
+#contato {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #000;
+}
+
+#contato h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+#contato p {
+    margin-bottom: 30px;
+    color: #ccc;
+}
+
+#contato ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+#contato a {
+    text-decoration: none;
+    color: #d91c19;
+    font-weight: bold;
+}
+
+#contato a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #111;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    color: #777;
+}
+
+@media (max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-agendar {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+
+    #hero h2 {
+        font-size: 32px;
+    }
+
+    #hero p {
+        font-size: 18px;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-conteudo {
+    background-color: #111;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+
+.modal-conteudo h2 {
+    margin-bottom: 15px;
+}
+
+.modal-conteudo p {
+    margin-bottom: 20px;
+    color: #ccc;
+}
+
+.fechar {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.modal {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6); 
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.show {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-conteudo {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 90%;
+    position: relative;
+
+    transform: translateY(-50px);
+    transition: transform 0.3s ease;
+}
+
+.modal.show .modal-conteudo {
+    transform: translateY(0);
+}
+
+.modal .fechar {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.modal-conteudo input,
+.modal-conteudo select,
+.modal-conteudo button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.modal-conteudo button {
+    background-color: #222;
+    color: #fff;
+    border: none;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.modal-conteudo button:hover {
+    background-color: #555;
+}
+
+@media (max-width: 600px) {
+    .modal-conteudo {
+        width: 95%; 
+        padding: 1.5rem;
+        font-size: 1rem;
+    }
+
+    .modal-conteudo input,
+    .modal-conteudo select,
+    .modal-conteudo button {
+        padding: 0.7rem;
+        font-size: 1rem;
+    }
+
+    .modal .fechar {
+        top: 8px;
+        right: 10px;
+        font-size: 1.3rem;
+    }
+}
+
+.modal-conteudo button {
+    padding: 0.8rem;
+    font-size: 1.1rem;
+}
+
+.modal-conteudo input,
+.modal-conteudo select {
+    padding: 0.8rem;
+    font-size: 1rem;
+}
+
+.modal-conteudo h2 {
+    font-size: 1.5rem;
+}
+
+.modal-conteudo p {
+    font-size: 1rem;
+}
+
+#galeria div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+#galeria img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+#galeria img:hover {
+    transform: scale(1.05);
+}
+
+section {
+    padding: 80px 20px;
+}
+
+.modal-conteudo {
+    padding: 2.5rem;
+}
+
+.modal-conteudo p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
