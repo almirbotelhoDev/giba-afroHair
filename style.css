@@ -199,14 +199,17 @@ footer {
 @media (max-width: 768px) {
   nav ul {
     display: none;
-    flex-direction: column;
-    background: #000;
-    width: 100%;
-    margin-top: 10px;
   }
 
   nav ul.ativo {
     display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+  }
+
+  .menu-btn {
+    display: block;
   }
 
   #hero h2 {
@@ -220,4 +223,13 @@ footer {
   #servicos div {
     flex-direction: column;
   }
+}
+
+.menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
 }

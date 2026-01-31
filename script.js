@@ -102,3 +102,11 @@ agendar.addEventListener('submit', function (event) {
     agendar.reset();
     modal.classList.remove('show');
 });
+
+const linksMenu = document.querySelectorAll("nav ul a");
+
+linksMenu.forEach(link => {
+    link.addEventListener("click", () => {
+        menu.classList.remove("ativo");
+    });
+});
